@@ -63,6 +63,12 @@ namespace BitcoinLib.RPC.Specifications
         signrawtransaction,
         sighashtype,
 
+        //== PSBT ==
+        converttopsbt,
+        walletprocesspsbt,
+        combinepsbt,
+        finalizepsbt,
+
         //== Util ==
         createmultisig,
         estimatefee,

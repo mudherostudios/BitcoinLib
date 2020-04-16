@@ -68,6 +68,11 @@ namespace BitcoinLib.Services
             _rpcConnector.MakeRequest<string>(RpcMethods.backupwallet, destination);
         }
 
+        public string CombinePsbt(List<string> transactionPsbts)
+        {
+            return _rpcConnector.MakeRequest<string>(RpcMethods.combinepsbt, JsonConvert.SerializeObject(transactionPsbts));
+        }
+
         public CreateMultiSigResponse CreateMultiSig(int nRquired, List<string> publicKeys)
         {
             return _rpcConnector.MakeRequest<CreateMultiSigResponse>(RpcMethods.createmultisig, nRquired, publicKeys);
@@ -76,6 +81,11 @@ namespace BitcoinLib.Services
         public string CreateRawTransaction(CreateRawTransactionRequest rawTransaction)
         {
             return _rpcConnector.MakeRequest<string>(RpcMethods.createrawtransaction, rawTransaction.Inputs, rawTransaction.Outputs);
+        }
+
+        public string ConvertToPsbt(string transactionHex)
+        {
+            return _rpcConnector.MakeRequest<string>(RpcMethods.converttopsbt, transactionHex);
         }
 
         public DecodeRawTransactionResponse DecodeRawTransaction(string rawTransactionHexString)
@@ -111,6 +121,11 @@ namespace BitcoinLib.Services
         public decimal EstimatePriority(ushort nBlocks)
         {
             return _rpcConnector.MakeRequest<decimal>(RpcMethods.estimatepriority, nBlocks);
+        }
+
+        public FinalizePsbtResponse FinalizePsbt(string transactionPsbt)
+        {
+            return _rpcConnector.MakeRequest<FinalizePsbtResponse>(RpcMethods.finalizepsbt, transactionPsbt);
         }
 
         public string GetAccount(string bitcoinAddress)
@@ -550,6 +565,11 @@ namespace BitcoinLib.Services
             return _rpcConnector.MakeRequest<bool>(RpcMethods.move, fromAccount, toAccount, amount, minConf, comment);
         }
 
+        public string NameRawTransaction(string transactionHex, string nameOperation, int vout = 0)
+        {
+            return _rpcConnector.MakeRequest<string>(RpcMethods.namerawtransaction, transactionHex, vout, nameOperation);
+        }
+
         public void Ping()
         {
             _rpcConnector.MakeRequest<string>(RpcMethods.ping);
@@ -673,6 +693,11 @@ namespace BitcoinLib.Services
         public string WalletPassphraseChange(string oldPassphrase, string newPassphrase)
         {
             return _rpcConnector.MakeRequest<string>(RpcMethods.walletpassphrasechange, oldPassphrase, newPassphrase);
+        }
+
+        public WalletProcessPsbtResponse WalletProcessPsbt(string transactionPsbt)
+        {
+            return _rpcConnector.MakeRequest<WalletProcessPsbtResponse>(RpcMethods.walletprocesspsbt, transactionPsbt);
         }
 
         public override string ToString()

@@ -78,11 +78,11 @@ namespace BitcoinLib.Services.RpcServices.RpcService
         string CreateRawTransaction(CreateRawTransactionRequest rawTransaction);
         DecodeRawTransactionResponse DecodeRawTransaction(string rawTransactionHexString);
         DecodeScriptResponse DecodeScript(string hexString);
-        //  fundrawtransaction
         GetRawTransactionResponse GetRawTransaction(string txId, int verbose = 0);
+        GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options);
+        string NameRawTransaction(string transactionHex, string nameOperation, int vout = 0);
         string SendRawTransaction(string rawTransactionHexString, bool? allowHighFees = false);
         SignRawTransactionResponse SignRawTransaction(SignRawTransactionRequest signRawTransactionRequest);
-        GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options);
 
         #endregion
 
@@ -217,6 +217,13 @@ namespace BitcoinLib.Services.RpcServices.RpcService
         /// </summary>
         /// <returns>The most recent game state.</returns>
         GameStateResult GetCurrentState();
+        #endregion
+
+        #region PSBT
+        string CombinePsbt(List<string> transactionPsbts);
+        string ConvertToPsbt(string transactionHex);
+        FinalizePsbtResponse FinalizePsbt(string transactionPsbt);
+        WalletProcessPsbtResponse WalletProcessPsbt(string transactionPsbt);
         #endregion
     }
 }
