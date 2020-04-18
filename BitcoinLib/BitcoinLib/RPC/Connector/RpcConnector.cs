@@ -182,7 +182,7 @@ namespace BitcoinLib.RPC.Connector
                 }
 
                 #endregion
-
+                
                 return default(T);
             }
             catch (JsonException jsonException)

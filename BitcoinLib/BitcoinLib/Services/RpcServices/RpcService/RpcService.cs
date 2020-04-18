@@ -565,9 +565,9 @@ namespace BitcoinLib.Services
             return _rpcConnector.MakeRequest<bool>(RpcMethods.move, fromAccount, toAccount, amount, minConf, comment);
         }
 
-        public string NameRawTransaction(string transactionHex, string nameOperation, int vout = 0)
+        public NameRawTransactionResponse NameRawTransaction(string transactionHex, string nameOperation, int vout = 0)
         {
-            return _rpcConnector.MakeRequest<string>(RpcMethods.namerawtransaction, transactionHex, vout, nameOperation);
+            return _rpcConnector.MakeRequest<NameRawTransactionResponse>(RpcMethods.namerawtransaction, transactionHex, vout, nameOperation);
         }
 
         public void Ping()
@@ -769,18 +769,20 @@ namespace BitcoinLib.Services
         /// numeric fields return -1 if it does not exist, and boolean fileds return false if the name does not exist. Otherwise, regular data is returned.</returns> 
         public GetShowNameResponse ShowName(string name)
         {
-            GetShowNameResponse response = new GetShowNameResponse();
-            // Initialise all fields as empty.
-            response.name = "";
-            response.name_encoding = "";
-            response.name_error = "";
-            response.value = "";
-            response.value_encoding = "";
-            response.txid = "";
-            response.vout = -1;
-            response.address = "";
-            response.ismine = false;
-            response.height = -1;
+            GetShowNameResponse response = new GetShowNameResponse
+            {
+                // Initialise all fields as empty.
+                name = "",
+                name_encoding = "",
+                name_error = "",
+                value = "",
+                value_encoding = "",
+                txid = "",
+                vout = -1,
+                address = "",
+                ismine = false,
+                height = -1
+            };
 
             try
             {

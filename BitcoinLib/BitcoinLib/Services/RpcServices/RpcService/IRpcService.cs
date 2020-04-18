@@ -73,14 +73,14 @@ namespace BitcoinLib.Services.RpcServices.RpcService
 
         #endregion
 
-        #region Rawtransactions
+        #region RawTransactions
 
         string CreateRawTransaction(CreateRawTransactionRequest rawTransaction);
         DecodeRawTransactionResponse DecodeRawTransaction(string rawTransactionHexString);
         DecodeScriptResponse DecodeScript(string hexString);
         GetRawTransactionResponse GetRawTransaction(string txId, int verbose = 0);
         GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options);
-        string NameRawTransaction(string transactionHex, string nameOperation, int vout = 0);
+        NameRawTransactionResponse NameRawTransaction(string transactionHex, string nameOperation, int vout = 0);
         string SendRawTransaction(string rawTransactionHexString, bool? allowHighFees = false);
         SignRawTransactionResponse SignRawTransaction(SignRawTransactionRequest signRawTransactionRequest);
 
