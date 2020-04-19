@@ -82,6 +82,9 @@ namespace BitcoinLibDebugger
             string cosigned = service.CombinePsbt(new List<string>() { buyerSigned, sellerSigned });
             FinalizePsbtResponse finalized = service.FinalizePsbt(cosigned);
 
+            daemonUrl = $"http://{rpcUsername}:{rpcPassword}@127.0.0.1:{port}/wallet/game.dat";
+            service = new XAYAService(daemonUrl, rpcUsername, rpcPassword, null);
+
             if (finalized.Complete)
             {
                 string txid = service.SendRawTransaction(finalized.Hex, false);
