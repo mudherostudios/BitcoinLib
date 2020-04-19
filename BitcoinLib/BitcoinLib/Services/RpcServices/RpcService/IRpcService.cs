@@ -80,7 +80,7 @@ namespace BitcoinLib.Services.RpcServices.RpcService
         DecodeScriptResponse DecodeScript(string hexString);
         GetRawTransactionResponse GetRawTransaction(string txId, int verbose = 0);
         GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options);
-        NameRawTransactionResponse NameRawTransaction(string transactionHex, string nameOperation, int vout = 0);
+        NameRawTransactionResponse NameRawTransaction(string transactionHex, object nameOperation, int vout = 0);
         string SendRawTransaction(string rawTransactionHexString, bool? allowHighFees = false);
         SignRawTransactionResponse SignRawTransaction(SignRawTransactionRequest signRawTransactionRequest);
 
@@ -222,6 +222,7 @@ namespace BitcoinLib.Services.RpcServices.RpcService
         #region PSBT
         string CombinePsbt(List<string> transactionPsbts);
         string ConvertToPsbt(string transactionHex);
+        string DecodePsbt(string psbt);
         FinalizePsbtResponse FinalizePsbt(string transactionPsbt);
         WalletProcessPsbtResponse WalletProcessPsbt(string transactionPsbt);
         #endregion

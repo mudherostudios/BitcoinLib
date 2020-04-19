@@ -70,7 +70,7 @@ namespace BitcoinLib.Services
 
         public string CombinePsbt(List<string> transactionPsbts)
         {
-            return _rpcConnector.MakeRequest<string>(RpcMethods.combinepsbt, JsonConvert.SerializeObject(transactionPsbts));
+            return _rpcConnector.MakeRequest<string>(RpcMethods.combinepsbt, transactionPsbts);
         }
 
         public CreateMultiSigResponse CreateMultiSig(int nRquired, List<string> publicKeys)
@@ -88,6 +88,12 @@ namespace BitcoinLib.Services
             return _rpcConnector.MakeRequest<string>(RpcMethods.converttopsbt, transactionHex);
         }
 
+        [Obsolete("Is not supported since the daemon does not return valid json. This will error.")]
+        public string DecodePsbt(string psbt)
+        {
+            return _rpcConnector.MakeRequest<string>(RpcMethods.decodepsbt, psbt);
+        }
+        
         public DecodeRawTransactionResponse DecodeRawTransaction(string rawTransactionHexString)
         {
             return _rpcConnector.MakeRequest<DecodeRawTransactionResponse>(RpcMethods.decoderawtransaction, rawTransactionHexString);
@@ -565,7 +571,7 @@ namespace BitcoinLib.Services
             return _rpcConnector.MakeRequest<bool>(RpcMethods.move, fromAccount, toAccount, amount, minConf, comment);
         }
 
-        public NameRawTransactionResponse NameRawTransaction(string transactionHex, string nameOperation, int vout = 0)
+        public NameRawTransactionResponse NameRawTransaction(string transactionHex, object nameOperation, int vout = 0)
         {
             return _rpcConnector.MakeRequest<NameRawTransactionResponse>(RpcMethods.namerawtransaction, transactionHex, vout, nameOperation);
         }

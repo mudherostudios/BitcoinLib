@@ -1,0 +1,11 @@
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\bin\Release\netcoreapp2.1\Debugger.deps.json
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\bin\Release\netcoreapp2.1\Debugger.runtimeconfig.json
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\bin\Release\netcoreapp2.1\Debugger.runtimeconfig.dev.json
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\bin\Release\netcoreapp2.1\Debugger.dll
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\bin\Release\netcoreapp2.1\Debugger.pdb
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.csprojAssemblyReference.cache
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.AssemblyInfoInputs.cache
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.AssemblyInfo.cs
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.dll
+C:\Users\Douglas\Documents\GitHub\BitcoinLib\ConsoleApp1\obj\Release\netcoreapp2.1\Debugger.pdb

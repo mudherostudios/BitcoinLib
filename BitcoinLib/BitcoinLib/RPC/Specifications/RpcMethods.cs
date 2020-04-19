@@ -65,10 +65,11 @@ namespace BitcoinLib.RPC.Specifications
         sighashtype,
 
         //== PSBT ==
-        converttopsbt,
-        walletprocesspsbt,
         combinepsbt,
+        converttopsbt,
+        decodepsbt,
         finalizepsbt,
+        walletprocesspsbt,
 
         //== Util ==
         createmultisig,

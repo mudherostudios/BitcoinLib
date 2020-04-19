@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLib", "BitcoinLib\BitcoinLib.csproj", "{FB99EBBF-8BBE-4E89-BDFA-5BBDBE08A8F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debugger", "ConsoleApp1\Debugger.csproj", "{4D5C47E8-5D36-48C8-B833-B2E647B0D298}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FB99EBBF-8BBE-4E89-BDFA-5BBDBE08A8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB99EBBF-8BBE-4E89-BDFA-5BBDBE08A8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB99EBBF-8BBE-4E89-BDFA-5BBDBE08A8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5C47E8-5D36-48C8-B833-B2E647B0D298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5C47E8-5D36-48C8-B833-B2E647B0D298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5C47E8-5D36-48C8-B833-B2E647B0D298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5C47E8-5D36-48C8-B833-B2E647B0D298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
