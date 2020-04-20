@@ -81,6 +81,8 @@
     <Compile Include="BitcoinLib\ExceptionHandling\Rpc\RpcResponseDeserializationException.cs" />
     <Compile Include="BitcoinLib\ExtensionMethods\CoinServiceExtensionMethods.cs" />
     <Compile Include="BitcoinLib\ExtensionMethods\DecimalExtensionMethods.cs" />
+    <Compile Include="BitcoinLib\Parameters\FeeOptions.cs" />
+    <Compile Include="BitcoinLib\Parameters\NameOperation.cs" />
     <Compile Include="BitcoinLib\Requests\AddNode\NodeAction.cs" />
     <Compile Include="BitcoinLib\Requests\CreateRawTransaction\CreateRawTransactionInput.cs" />
     <Compile Include="BitcoinLib\Requests\CreateRawTransaction\CreateRawTransactionOutput.cs" />
@@ -169,5 +171,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

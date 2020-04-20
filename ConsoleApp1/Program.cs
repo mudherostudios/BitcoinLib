@@ -2,12 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using BitcoinLib.Services.Coins.XAYA;
+using BitcoinLib.Parameters;
 using BitcoinLib.Requests;
 using BitcoinLib.Responses;
 using BitcoinLib.Requests.CreateRawTransaction;
 using BitcoinLib.Responses.SharedComponents;
-
-using Newtonsoft.Json;
 
 namespace BitcoinLibDebugger
 {
@@ -134,34 +133,6 @@ namespace BitcoinLibDebugger
         {
             Console.WriteLine(printable);
             Console.ReadLine();
-        }
-    }
-
-    public class NameOperation
-    {
-        public string op;
-        public string name;
-        public string value;
-
-        public NameOperation() { }
-        public NameOperation(string _operation, string _name, string _value)
-        {
-            op = _operation;
-            name = _name;
-            value = _value;
-        }
-    }
-
-    public class FeeOptions
-    {
-        public decimal feeRate;
-        public int changePosition;
-
-        public FeeOptions() { }
-        public FeeOptions(decimal _feeRate, int _changePosition)
-        {
-            feeRate = _feeRate;
-            changePosition = _changePosition;
         }
     }
 }
