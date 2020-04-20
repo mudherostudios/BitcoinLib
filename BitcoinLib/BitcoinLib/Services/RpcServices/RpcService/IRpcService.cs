@@ -79,7 +79,7 @@ namespace BitcoinLib.Services.RpcServices.RpcService
         DecodeRawTransactionResponse DecodeRawTransaction(string rawTransactionHexString);
         DecodeScriptResponse DecodeScript(string hexString);
         GetRawTransactionResponse GetRawTransaction(string txId, int verbose = 0);
-        GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options);
+        GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, object options=null);
         NameRawTransactionResponse NameRawTransaction(string transactionHex, object nameOperation, int vout = 0);
         string SendRawTransaction(string rawTransactionHexString, bool? allowHighFees = false);
         SignRawTransactionResponse SignRawTransaction(SignRawTransactionRequest signRawTransactionRequest);

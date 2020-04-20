@@ -652,11 +652,11 @@ namespace BitcoinLib.Services
             return _rpcConnector.MakeRequest<SignRawTransactionResponse>(RpcMethods.signrawtransaction, request.RawTransactionHex, request.Inputs, request.PrivateKeys, request.SigHashType);
         }
 
-        public GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, params object[] options)
+        public GetFundRawTransactionResponse GetFundRawTransaction(string rawTransactionHex, object options=null)
         {
             return options == null
                 ? _rpcConnector.MakeRequest<GetFundRawTransactionResponse>(RpcMethods.fundrawtransaction, rawTransactionHex)
-                : _rpcConnector.MakeRequest<GetFundRawTransactionResponse>(RpcMethods.fundrawtransaction, rawTransactionHex);
+                : _rpcConnector.MakeRequest<GetFundRawTransactionResponse>(RpcMethods.fundrawtransaction, rawTransactionHex, options);
         }
 
         public string Stop()
