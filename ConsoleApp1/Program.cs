@@ -25,14 +25,20 @@ namespace BitcoinLibDebugger
 
         static void Main(string[] args)
         {
+            daemonUrl = $"http://{rpcUsername}:{rpcPassword}@127.0.0.1:{port}/wallet/vault.dat";
+            service = new XAYAService(daemonUrl, rpcUsername, rpcPassword, walletPassword);
+
+            string sellerAddress1 = service.GetNewAddress(null);
+            string sellerAddress2 = service.GetNewAddress(null);
+
             daemonUrl = $"http://{rpcUsername}:{rpcPassword}@127.0.0.1:{port}/wallet/game.dat";
             service = new XAYAService(daemonUrl, rpcUsername, rpcPassword, null);
 
             //Construct Outputs and First RawTransaction Part
             GetShowNameResponse sellerInfo = service.ShowName(seller);
             var rawRequestA = new CreateRawTransactionRequest();
-            rawRequestA.AddOutput(service.ShowName(buyer).address, 0.01m);
-            rawRequestA.AddOutput(sellerInfo.address, 1.0m);
+            rawRequestA.AddOutput(sellerAddress1, 0.01m);
+            rawRequestA.AddOutput(sellerAddress2, 1.0m);
             string rawTransactionA = service.CreateRawTransaction(rawRequestA);
 
             //Build the Funded RawTransaction Automatically.
@@ -64,7 +70,7 @@ namespace BitcoinLibDebugger
 
             //Update the RawTransaction with a Required Name Operation from the Seller
             string transactionPsbt = "PSBT Not Set";
-            NameOperation nameOperation = new NameOperation("name_update", seller, "Atomic Transfer Successful!");
+            NameOperation nameOperation = new NameOperation("name_update", seller, "{\"msg\":\"Atomic Transfer Successful!\"}");
             NameRawTransactionResponse namedResponse = service.NameRawTransaction(combinedTransaction, nameOperation);
             if (namedResponse == null)
             {
@@ -87,6 +93,7 @@ namespace BitcoinLibDebugger
 
             if (finalized.Complete)
             {
+                Print("Finalized Contract.\n"+finalized.Hex);
                 string txid = service.SendRawTransaction(finalized.Hex, false);
                 Print(txid);
             }
