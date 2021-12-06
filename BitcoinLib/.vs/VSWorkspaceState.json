@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BitcoinLib",
+    "\\BitcoinLib\\RPC",
+    "\\BitcoinLib\\RPC\\Connector",
+    "\\BitcoinLib\\RPC\\Specifications",
+    "\\BitcoinLib\\Services",
+    "\\BitcoinLib\\Services\\Coins",
+    "\\BitcoinLib\\Services\\Coins\\Dash",
+    "\\BitcoinLib\\Services\\Coins\\Mogwaicoin",
+    "\\BitcoinLib\\Services\\RpcServices",
+    "\\BitcoinLib\\Services\\RpcServices\\RpcService"
+  ],
+  "SelectedNode": "\\BitcoinLib\\RPC\\Specifications\\RpcMethods.cs",
+  "PreviewInSolutionExplorer": false
+}
