@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4d5c47e8-5d36-48c8-b833-b2e647b0d298": {
+      "ProjectGuid": "4d5c47e8-5d36-48c8-b833-b2e647b0d298",
+      "DisplayName": "Debugger",
+      "ColorIndex": 0
+    },
+    "fb99ebbf-8bbe-4e89-bdfa-5bbdbe08a8f3": {
+      "ProjectGuid": "fb99ebbf-8bbe-4e89-bdfa-5bbdbe08a8f3",
+      "DisplayName": "BitcoinLib",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
