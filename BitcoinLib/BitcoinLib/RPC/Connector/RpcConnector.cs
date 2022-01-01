@@ -94,7 +94,8 @@ namespace BitcoinLib.RPC.Connector
             }
             catch (Exception exception)
             {
-                Console.WriteLine("There was a problem sending the request to the wallet", exception);
+                string basicMessage = "There was a problem sending the request to the wallet.";
+                Console.WriteLine($"{basicMessage} {exception.Message} {rpcMethod}");
                 return default(T);
             }
 
